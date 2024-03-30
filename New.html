@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Project</title>
-    <link rel="stylesheet" href="style.css" >
+    <link rel="stylesheet" href="style-base.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css" media= "screen and (min-width:981px)"/>
+    <link rel="stylesheet" href="style-medium.css" type="text/css" media= "screen and (min-width:481px) and (max-width:980px)"/>
+    <link rel="stylesheet" href="style-mini.css" type="text/css" media= "screen and (max-width:480px)"/>
 </head>
 <body>
    
 
     <div class="container">
     
-        <div class="header">
+        <div class="header display-great display-medium display-mini">
         
         <div class="logo">My Library  </div>
         <p>Make this site your personal library, add your own books</p>
         </div>
 
-    <div class="sidebar">
+    <div class="sidebar display-great display-medium display-mini">
         
         <div class="side-content">
             <button data-open-target="#openForm" class="addBook"><p  style=text-transform:uppercase;font-size:1.5rem>Add Book</p></button>
@@ -27,7 +30,7 @@
         
         <div class="side-content">
         
-        <div id="imageBox" class="box">
+        <div id="imageBox" class="box ">
             <img src="img/jean-vella-library.jpg" class="" style="display:grid"  width="100%" height="100%"
             alt="una-escalera-apoyada-en-una-estanteria-llena-de-libros">
         <p style="font-size: 0.5rem;position: relative;bottom: 20px">Foto de <a style="color: white" href="https://unsplash.com/es/@jean_vella?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Jean Vella</a> en <a style="color: white" href="https://unsplash.com/es/fotos/una-escalera-apoyada-en-una-estanteria-llena-de-libros-wuQ-2WLVJuo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
@@ -83,7 +86,7 @@
             
     </div>  <!-- cierra sidebar -->
 
-        <div id="library" class="myLibrary">
+        <div id="library" class="myLibrary display-great display-medium display-mini">
         
             <!-- espacio para crear el container de la libreria desde javascript -->
        

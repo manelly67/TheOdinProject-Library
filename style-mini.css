@@ -1,0 +1,269 @@
+.display-mini {
+    display: inherit !important;
+  }
+
+
+  div {
+	width: 100%;
+}
+
+/*modificaciones adaptadas a device mobiles*/
+.box {
+    display: none;
+}
+
+ 
+body{
+    font-family:  sans-serif;
+}
+
+        /* container principal */
+
+        .container {
+  text-align: center;
+  background-color: #393f4d;
+
+  display: grid;     
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 3fr 6fr;
+  grid-gap: 4px;
+  
+}
+
+.container div {
+  padding: 15px;
+  font-size: 32px;
+ 
+  font-weight: bold;
+  color: white;
+}
+
+      /* encabezado */
+
+.header {
+  background-color: #545e75;
+  
+  grid-row: 1 / 2;    /* esta linea se asocia al grid del container*/
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.header p {
+   font-size: 1.3rem;
+   grid-column-start: 2;  /* esta linea se asocia al grid del header*/
+   display:grid;
+   align-items: center;
+}
+
+.logo {
+  grid-column-start: 1;  /* esta linea se asocia al grid del header*/
+  justify-self: start;
+}
+
+
+   /* espacio lateral que incluye el formulario */
+
+   .sidebar {
+  background-color:  #545e75;
+  
+  grid-row: 2/3 ;     /* esta linea se asocia al grid del container*/
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 6fr 1fr;
+  gap: 15px;
+}
+
+
+
+.side-content {
+  background-color: white;
+  color: black;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.ocultar{
+  display: none;
+}
+
+.mostrar{
+  display: grid;
+}
+
+.addBook {
+     
+      color: black; line-height: 13px; padding: 15px; 
+      border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none;
+      font-style: normal; font-variant: normal; text-transform: none; 
+      background-image: linear-gradient(to right, rgb(105,117,142) 0%, rgb(214,217,225) 100%) ; 
+      box-shadow: #edeef1 2px 2px 4px 2px; border: 2px solid #353945; display: inline-block;
+  }
+  .addBook:hover {
+      background: #545e75; color: white; }
+  .addBook:active {
+      background: #454d5f; color: white; }
+
+      
+
+.ubicarCloseButton{
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+.closeButton {
+      grid-column: 2 / 3;    /* esta linea se asocia al grid del ubicarCloseButton*/
+       color:#8893a8; font-size: 1rem; padding: 9px; border-radius: 6px;
+       background-color: #545e75; /* width: 30px; height: 30px; */
+       box-shadow: #454d5f 2px 2px 4px 2px; border: 4px solid #8893a8;
+}
+
+label{ 
+  font-size: 1.5rem;
+  text-shadow: 1px 0px 3px #353945;
+  display: flex;
+  flex: 1; 
+  }
+
+
+.formBody > div > input { 
+          /* solo los tres inputs no contempla el checkbox*/
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  height: 20px;
+  width: 95%;
+  border-radius: 6px;
+  border: 2px solid #E5E7EB;
+  }
+
+  .inputRead {
+      display: grid;
+      grid-template-columns: 5fr 1fr;
+      } 
+
+
+  #hasRead  {
+          grid-column: 2 / 3;    /* esta linea se asocia al grid del inputread*/
+
+       color:#8893a8; font-size: 2rem; padding: 9px; border-radius: 6px;
+       background-color: #545e75; width: 30px; height: 30px;
+       box-shadow: #454d5f 2px 2px 4px 2px; border: 4px solid #8893a8; display: inline-block;
+   }
+
+
+
+  /*  input [type="checkbox"]:checked {
+      background-color: #545e75;
+   } */
+
+   .submitButton{
+      line-height: 13px; padding: 5px; 
+      border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none;
+      font-style: normal; font-variant: normal; text-transform: none; 
+  
+      box-shadow: #454d5f 2px 2px 4px 2px; border: 4px solid #8893a8; display: inline-block;
+
+   }
+  
+   .subButton{
+      color:#8893a8; font-size: 0.6rem; 
+   }
+  
+    /* espacio para desplegar el contenido de la libreria*/
+
+    .myLibrary {
+  background-color: #d6d9e1;
+  
+  display: grid;
+  grid-row: 3 / 4;     /* esta linea se asocia al grid del container*/
+  
+  
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));  
+  column-gap: 15px;
+  row-gap:0px;
+  }
+
+.myLibrary p {
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: white;
+  text-align: left;
+}
+
+.myLibrary .card {
+  background-color: #edeef1;
+  color: black;
+  text-align: center;
+  
+  height: 200px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+
+}
+
+.card p {
+  color: black;
+  font-weight: normal;
+  font-size: 1rem;
+  padding-left: 40px;
+  padding-bottom: 10px;
+}
+
+.card .title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.title { 
+  grid-column: 1/3 ;     /* esta linea se asocia al grid del card*/
+}
+
+.showAuthor {
+  grid-row: 2/3 ;     /* esta linea se asocia al grid del card*/
+  grid-column: 1/3 ;  
+}
+
+.showPages {
+  grid-row: 3/4 ;     /* esta linea se asocia al grid del card*/
+  grid-column: 1/3 ;
+}
+.showRead { 
+  grid-row: 4/5 ;     /* esta linea se asocia al grid del card*/
+}
+
+.removeButton {
+  
+  grid-column: 2/3;       /* esta linea se asocia al grid del card*/
+}
+
+
+  .showRead  {
+     
+      color: black; line-height: 13px; padding: 9px; 
+      border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none;
+      font-style: normal; font-variant: normal; text-transform: none; 
+      background-image: linear-gradient(to right, rgb(105,117,142) 0%, rgb(214,217,225) 100%) ; 
+      box-shadow: #edeef1 2px 2px 4px 2px; border: 2px solid #353945; display: inline-block;
+  }
+  .showRead:hover {
+      background: #545e75; }
+  .showRead:active {
+      background: #454d5f; }
+
+      .removeButton {
+          color:#8893a8; line-height: 13px; padding: 9px; 
+          border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none;
+          font-style: normal; font-variant: normal; text-transform: none; 
+      
+          box-shadow: #454d5f 2px 2px 4px 2px; border: 4px solid #8893a8; display: inline-block;
+      }
+      .removeButton:hover {
+          color:#69758e;
+          border: 4px solid #69758e; }
+      .removeButton:active {
+          color:#545e75;
+          border: 4px solid #545e75; }
