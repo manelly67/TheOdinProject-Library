@@ -2,15 +2,12 @@
     display: inherit !important;
   }
 
+/*Para la version mobile se modifico el grid del container principal 
+y las lineas de grid de el header- el sidebar-y el contenido lybrary - el ancho div a 90% */
 
-  div {
-	width: 85%;
+div {
+	width: 90%;
 }
-
-/*modificaciones adaptadas a device mobiles*/
-/* .box {
-    display: none;
-} */
 
  
 body{
@@ -25,7 +22,7 @@ body{
 
   display: grid;     
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 3fr 6fr;
+  grid-template-rows: 1fr 2fr 5fr;
   grid-gap: 4px;
   
 }
