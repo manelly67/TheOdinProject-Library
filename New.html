@@ -4,9 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" >
 </head>
 <body>
-    <script src="library.js"></script>
+   
+
+    <div class="container">
     
+        <div class="header">
+        
+        <div class="logo">My Library  </div>
+        <p>Make this site your personal library, add your own books</p>
+        </div>
+
+    <div class="sidebar">
+        
+        <div class="side-content">
+            <button data-open-target="#openForm" class="addBook"><p  style=text-transform:uppercase;font-size:1.5rem>Add Book</p></button>
+            
+        </div>
+        
+        
+        <div class="side-content">
+        
+        <div id="imageBox" class="box">
+            <img src="img/jean-vella-library.jpg" class="" style="display:grid"  width="100%" height="100%"
+            alt="una-escalera-apoyada-en-una-estanteria-llena-de-libros">
+        <p style="font-size: 0.5rem;position: relative;bottom: 20px">Foto de <a style="color: white" href="https://unsplash.com/es/@jean_vella?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Jean Vella</a> en <a style="color: white" href="https://unsplash.com/es/fotos/una-escalera-apoyada-en-una-estanteria-llena-de-libros-wuQ-2WLVJuo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+        </p>
+         </div>
+
+
+
+            <div class="openForm ocultar" id="openForm">  
+                <div class="ubicarCloseButton">
+                <button data-close-button="" class="closeButton">Close Form</button> 
+                </div>  
+            <!--Form-->
+            <form id="form">
+            <div class="formBody">
+  
+              <!--Inputs for Add Book Form-->
+              <div class="inputTitle">
+                <label  for="title">Book Title:</label>
+                <input  type="text" name="title" id="title" required >
+              </div>
+              
+              <div class="inputAuthor">
+                <label for="author">Author:</label>
+                <input type="text" name="author" id="author" required>
+              </div>
+              
+              <div class="inputPages">
+                <label for="pages">How Many Pages:</label>
+                <input type="number" name="pages" id="pages">
+              </div>
+              
+              <div class="inputRead">
+                <div>
+                <label for="hasRead">I have read this book:</label>
+                </div>
+                <div>
+                <input type="checkbox" id="hasRead" name="hasReadTrueFalse"> 
+                </div>
+              </div>
+
+              <div class="submitButton">
+                <input type="submit" value="Submit Entry" class="subButton"></input>
+              </div>
+
+            </div>
+            </form>
+            </div> 
+        </div>
+        
+            <div class="side-content">Box 3
+            </div>
+            
+    </div>  <!-- cierra sidebar -->
+
+        <div id="library" class="myLibrary">
+        
+            <!-- espacio para crear el container de la libreria desde javascript -->
+       
+        </div>
+    
+    </div>
+    
+    <script src="library.js"></script>   
 </body>
 </html>
