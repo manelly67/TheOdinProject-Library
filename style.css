@@ -10,8 +10,7 @@
  
           .container {
     text-align: center;
-/*     background-color: #393f4d; */
-background-color: white;
+    background-color: #393f4d;
     display: grid;     
     grid-template-columns: 2fr 4fr;
     grid-gap: 4px;
@@ -258,4 +257,3 @@ background-color: white;
             color:#545e75;
             border: 4px solid #545e75; }
   
-

@@ -26,40 +26,96 @@ function closeForm(openAddForm) {
   imageBox.classList.remove('ocultar');
 }
 
+// Define required - omit the browser validation
+inputsArray=[];
+const formValidation = document.getElementById('form');
+const titleField = document.getElementById('title');
+inputsArray.push(titleField);
+const authorField = document.getElementById('author');
+inputsArray.push(authorField);
+const pagesField = document.getElementById('pages');
+inputsArray.push(pagesField);
+console.log(inputsArray);
+
+formValidation.setAttribute('novalidate', '');
+titleField.setAttribute('required', '');
+authorField.setAttribute('required', '');
+pagesField.setAttribute('required', '');
+
+const checkValidity = (arg) => {    
+  // Functions for validation
+    if (arg.validity.valueMissing===true) {
+      console.log(arg.validity.valueMissing);
+      showError(arg);
+    }
+return  arg.validity.valueMissing;
+} 
+
+function showError(arg) {
+    // display the following error message.
+    const inputError = document.createElement('p');
+    inputError.classList.add('error');
+    inputError.classList.add('active');
+    inputError.setAttribute( 'aria-live','polite');
+    inputError.setAttribute('id',arg);
+    inputError.textContent = 'You need to enter a value for this field.';
+ 
+    const parentElement = arg.parentNode;
+    console.log(parentElement);
+    parentElement.appendChild(inputError);  
+}
+
+function deleteErrorMessages(){
+  const errorMessages = document.querySelectorAll('.error');
+  const errorMessagesArray = [...errorMessages];
+  console.log(errorMessagesArray);
+  const iterator = errorMessagesArray.entries();
+  errorMessagesArray.forEach((element) => {
+    index = iterator.next().value;
+    console.log(index[0]);
+    console.log(index[1]);
+    x = index[1];  /* para leer el node dentro del nodeList */
+    console.log(x);
+    x.parentNode.removeChild(x);
+  });
+}
+
 
 //Form Submission
+let validationArray = [];
+var form = document.getElementById('form');
 
-var form = document.getElementById('form')
-
+form.addEventListener('submit', deleteErrorMessages);
 form.addEventListener('submit', function(event){
-  event.preventDefault()
-
-  var title = document.getElementById('title').value
-  //console.log(title)
-
+  event.preventDefault();
+  
+  var title = document.getElementById('title').value;
+  
   var author = document.getElementById('author').value
-  //console.log(author)
 
   var pages = document.getElementById('pages').value
-  //console.log(pages)
 
   let hasRead = document.querySelector('#hasRead').checked; 
  
-  
-  //console.log(hasRead.checked)
-  
-  const book = new Book(title, author, pages, hasRead);
-  //console.log(book.bookInfo());
+  validationArray = []; /* clean the previous validation */
+  inputsArray.forEach((element) => {
+    checkValidity(element);
+    validationArray.push(element.validity.valueMissing);
+  });
 
-   addBookToLibrary(book);
+  console.log(validationArray);
 
-  console.log(myLibrary);
-
-  displayNewBooks(myLibrary, book);
- 
-  document.getElementById('form').reset();  
-
-  
+  if(validationArray.includes(true)){
+    event.preventDefault();
+  }else{
+    console.log(validationArray);
+    const book = new Book(title, author, pages, hasRead);
+    addBookToLibrary(book);
+    console.log(myLibrary);
+    displayNewBooks(myLibrary, book);
+    document.getElementById('form').reset();
+  }
+   
 });
 
 // definiendo el constructor

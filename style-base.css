@@ -50,7 +50,34 @@ table {
 
 /* hasta aqui el reseteo de los estilos prediseñados de los buscadores
 */
- 
+
+
+/* This is our style for the invalid fields */
+ input:invalid {
+	border-color: #900;
+	background-color: #fdd;
+  }
+  
+  input:focus:invalid {
+	outline: none;
+  }
+  
+  /* This is the style of our error messages */
+  .error {
+	width: 100%;
+	padding: 0;
+  
+	font-size: 1rem;
+	color: white;
+	background-color: #900;
+	border-radius: 0 0 5px 5px;
+  
+	box-sizing: border-box;
+  }
+  
+  .error.active {
+	padding: 0.3em;
+  }
 
 .display-great {
     display:none;
